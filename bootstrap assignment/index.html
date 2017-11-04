@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Sample Page</title>
+		<meta charset="utf-8">
+		<meta name="referrer" content="no-referrer">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="bootstrapstyle.css">
+	</head>
+	<body class="text-center">
+
+
+
+
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">WebSiteName</a>
+				</div>
+			<ul class="nav navbar-nav">
+				<li class="active">
+					<a href="#">Home</a>
+				</li>
+				<li class="dropdown" id="foodlist">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Food<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Butter Chicken</a></li>
+						<li><a href="#">Dhokla</a></li>
+						<li><a href="#">GolGappe</a></li>
+						<li><a href="#">Momos</a></li>
+						<li><a href="#">Idli</a></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Games<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Football</a></li>
+						<li><a href="#">Cricket</a></li>
+						<li><a href="#">Basketball</a></li>
+						<li><a href="#">Table Tennis</a></li>
+						<li><a href="#">Badminton</a></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Electronics<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Mobile Phones</a></li>
+						<li><a href="#">Tablets</a></li>
+						<li><a href="#">Laptops</a></li>
+						<li><a href="#">Pendrives</a></li>
+						<li><a href="#">Headphones</a></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Accessories<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Watch</a></li>
+						<li><a href="#">Wrist Band</a></li>
+						<li><a href="#">Earings</a></li>
+						<li><a href="#">Bracelet</a></li>
+						<li><a href="#">Necklace</a></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Clothes<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Shirts</a></li>
+						<li><a href="#">T-Shirts</a></li>
+						<li><a href="#">Jeans</a></li>
+						<li><a href="#">Suits</a></li>
+						<li><a href="#">Shorts</a></li>
+					</ul>
+				</li>
+			
+			</ul>
+			<ul class="nav navbar-nav navbar-right" id="right-list">
+				<li><button class="btn btn-danger navbar-btn" onclick="addcategory()">Add Category</button></li>
+				<li><i class="glyphicon glyphicon-shopping-cart" style="font-size:35px;color:white;margin-top:5px;" onclick="displaycart()"></i></li>
+			</ul>
+		</div>
+	</nav>
+	
+	<div class="container-fliud text-center" id="wrapper">
+		<header class="text-center"><h1>Categories</h1></header>
+		<div class="row" id="categoryrow">
+			<div class="col-md-4 col-lg-4 col-xs-5 col-sm-5 category" id="clonenode">
+				<div class="categoryimg">
+					<img src="food.png" class="img-responsive" onclick="displayitem('0')">
+				</div>
+			</div>
+			<div class="col-md-4 col-lg-4 col-xs-5 col-sm-5 category">
+				<div class="categoryimg">
+					<img src="electronics.jpg" class="img-responsive" onclick="displayitem('1')">
+				</div>
+			</div>
+			<div class="col-md-4 col-lg-4 col-xs-5 col-sm-5 category">
+				<div class="categoryimg">
+					<img src="sports.jpg" class="img-responsive" onclick="displayitem('2')">
+				</div>
+			</div>
+			<div class="col-md-4 col-lg-4 col-xs-5 col-sm-5 category">
+				<div class="categoryimg">
+					<img src="accessories.jpg" class="img-responsive" onclick="displayitem('3')">
+				</div>
+			</div>
+			<div class="col-md-4 col-lg-4 col-xs-5 col-sm-5 category">
+				<div class="categoryimg">
+					<img src="clothes.jpg" class="img-responsive" onclick="displayitem('4')">
+				</div>
+			</div>
+		</div>
+		<div class="row" id="itemsrow">
+			<h2 class="text-center">Items</h2>
+			<div class="col-md-2 col-sm-3 col-xs-4 col-lg-2">
+				<div class="product-margin">	
+					<div class="bord product">
+						<img src="" class="img-responsive itemimg">
+					</div>
+					<h4 class="productname">Product Name</h4>
+					<div class="btn-group">
+						<button class="btn btn-danger cartbtn">Add to Cart</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-4 col-lg-2">
+				<div class="product-margin">	
+					<div class="bord product">
+						<img src="" class="img-responsive itemimg">
+					</div>
+					<h4 class="productname">Product Name</h4>
+					
+					<div class="btn-group">
+						<button class="btn btn-danger cartbtn">Add to Cart</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-4 col-lg-2">
+				<div class="product-margin">	
+					<div class="bord product">
+						<img src="" class="img-responsive itemimg">
+					</div>
+					<h4 class="productname">Product Name</h4>
+					
+					<div class="btn-group">
+						<button class="btn btn-danger cartbtn">Add to Cart</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-4 col-lg-2">
+				<div class="product-margin">	
+					<div class="bord product">
+						<img src="" class="img-responsive itemimg">
+					</div>
+					<h4 class="productname">Product Name</h4>
+					
+					<div class="btn-group">
+						<button class="btn btn-danger cartbtn">Add to Cart</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-2 col-sm-3 col-xs-4 col-lg-2">
+				<div class="product-margin">	
+					<div class="bord product">
+						<img src="" class="img-responsive itemimg">
+					</div>
+					<h4 class="productname">Product Name</h4>
+					
+					<div class="btn-group">
+						<button class="btn btn-danger cartbtn">Add to Cart</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-4 col-md-4 col-lg-4 col-sm-4" id="cart" style="display:none">
+			<span style="color:#c00;font-family:Georgia;font-size:20px">Items in Cart:</span>
+			<div id="itemscart">
+			
+			</div>
+		</div>
+	</div>
+	<script	type="text/javascript" src="category.js"></script>	
+	</body>			
+</html>
